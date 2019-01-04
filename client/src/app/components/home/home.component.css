@@ -1,0 +1,18 @@
+mat-card {
+  margin: 2rem auto 5rem;
+  text-align: center;
+  padding: 4rem 1rem;
+  background:  rgb(63, 81, 181);
+  color: #f4f4f4;
+}
+
+h1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+a {
+  padding: .60rem 1.80rem;
+  text-decoration: none;
+  color: rgb(63, 81, 181);
+}

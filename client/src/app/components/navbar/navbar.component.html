@@ -1,0 +1,34 @@
+<nav class="navbar navbar-expand-lg navbar-dark px-4 px-lg-5 mb-3">
+  <a class="navbar-brand" [routerLink]="['/']">AUTHENTICATION</a>
+  <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+        aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavId">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li *ngIf="!authService.isLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link" [routerLink]="['/']">HOME</a>
+      </li>
+      <li *ngIf="authService.isLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link" [routerLink]="['/dashboard']">DASHBOARD</a>
+      </li>
+      <li class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link" [routerLink]="['/about']">ABOUT</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav mL-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="www.github.com/rooneyrulz">GITHUB</a>
+      </li>
+      <li *ngIf="!authService.isLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link" [routerLink]="['/register']">REGISTER</a>
+      </li>
+      <li *ngIf="!authService.isLoggedIn()" class="nav-item" [routerLinkActive]="['active']" [routerLinkActiveOptions]="{exact:true}">
+        <a class="nav-link" [routerLink]="['/auth']">LOGIN</a>
+      </li>
+      <li *ngIf="authService.isLoggedIn()" class="nav-item">
+        <a href="#!" class="nav-link" (click)="onHandleLogOut()" >LOGOUT</a>
+      </li>
+    </ul>
+  </div>
+</nav>
